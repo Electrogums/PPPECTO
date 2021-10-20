@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ProyectoProspectos.Models.Prospecto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    
+    <a asp-action="Create"> Crear Nuevo </a><i class="fas fa-plus-circle"> </i>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.PrimerApellido)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.SegundoApellido)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Calle)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Colonia)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Cp)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Rfc)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Observación)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimerApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SegundoApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colonia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rfc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observación)
+            </td>
+            <td>
+                <a class="fas fa-edit" asp-action="Edit" asp-route-id="@item.IdProspecto"> </a>    |
+                <a class="fas fa-eye" asp-action="Details" asp-route-id="@item.IdProspecto"></a> |
+                <a class="fas fa-user-minus" asp-action="Delete" asp-route-id="@item.IdProspecto"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

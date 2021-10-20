@@ -1,0 +1,108 @@
+﻿@model ProyectoProspectos.Models.Prospecto
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Crear nuevo Prospecto</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimerApellido" class="control-label"></label>
+                <input asp-for="PrimerApellido" class="form-control" />
+                <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SegundoApellido" class="control-label"></label>
+                <input asp-for="SegundoApellido" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Calle" class="control-label"></label>
+                <input asp-for="Calle" class="form-control" />
+                <span asp-validation-for="Calle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Colonia" class="control-label"></label>
+                <input asp-for="Colonia" class="form-control" />
+                <span asp-validation-for="Colonia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cp" class="control-label"></label>
+                <input asp-for="Cp" class="form-control" />
+                <span asp-validation-for="Cp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rfc" class="control-label"></label>
+                <input asp-for="Rfc" class="form-control" />
+                <span asp-validation-for="Rfc" class="text-danger"></span>
+            </div>
+       
+            <div class="form-group">
+                <label asp-for="Observación" class="control-label"></label>
+                <input asp-for="Observación" class="form-control" />
+                <span asp-validation-for="Observación" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   @* <a asp-action="Index">Regresar <i class="fas fa-undo"></i> </a>*@
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Regresar
+        <i class="fas fa-undo"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Desea salir, se perderan los cambios actuales?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button"
+                            class="btn btn-primary" 
+                            onclick="location.href='/'"
+                    >Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    
+</script>
